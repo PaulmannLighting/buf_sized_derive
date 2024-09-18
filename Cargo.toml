@@ -2,6 +2,12 @@
 name = "buf_sized_derive"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Derive macros to calculate buffer sizes needed by types"
+repository = "https://github.com/PaulmannLighting/buf_sized_derive"
+documentation = "https://docs.rs/buf_sized_derive"
+keywords = ["buffer", "size", "calculation"]
+categories = ["encoding"]
 
 [dependencies]
 proc-macro2 = "1.0.86"
