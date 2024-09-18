@@ -9,7 +9,7 @@ use syn::{
 pub fn buf_sized(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = input.ident;
-    let generics = add_trait_bounds(input.generics, &parse_quote!(le_stream::ToLeBytes));
+    let generics = add_trait_bounds(input.generics, &parse_quote!(::buf_sized::BufSized));
     let (impl_generics, ty_generics, where_clause) = generics.split_for_impl();
     let buf_size = sum_buf_size(input.data);
     let expanded = quote! {
