@@ -17,3 +17,9 @@ syn = "2.0.77"
 
 [lib]
 proc-macro = true
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+unwrap_used = { level = "warn", priority = -2 }
