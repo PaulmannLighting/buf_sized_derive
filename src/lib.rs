@@ -1,3 +1,17 @@
+//! A library for deriving the `BufSized` trait.
+//!
+//! # Examples
+//! ```
+//! use buf_sized_derive::BufSized;
+//!
+//! #[derive(BufSized)]
+//! struct Data {
+//!     header: u8,
+//!     num: u128,
+//!     payload: [u8; 12],
+//!     crc: u32,
+//! }
+//! ```
 use proc_macro2::TokenStream;
 use quote::quote;
 use syn::{
@@ -5,6 +19,7 @@ use syn::{
     TypeParamBound,
 };
 
+/// Derive the `BufSized` trait for a struct.
 #[proc_macro_derive(BufSized)]
 pub fn buf_sized(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
