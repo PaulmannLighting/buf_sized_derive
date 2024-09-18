@@ -44,13 +44,8 @@ fn sum_buf_size(data: Data) -> TokenStream {
                 result.add_fields(fields.unnamed);
             }
         },
-        Data::Enum(data_enum) => {
-            for variant in data_enum.variants {
-                result.add_fields(variant.fields);
-            }
-        }
-        Data::Union(data_union) => {
-            result.add_fields(data_union.fields.named);
+        Data::Enum(_) | Data::Union(_) => {
+            unimplemented!("Enums and unions are not supported");
         }
     }
 
