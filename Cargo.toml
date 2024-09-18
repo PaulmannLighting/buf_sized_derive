@@ -8,6 +8,7 @@ repository = "https://github.com/PaulmannLighting/buf_sized_derive"
 documentation = "https://docs.rs/buf_sized_derive"
 keywords = ["buffer", "size", "calculation"]
 categories = ["encoding"]
+exclude = [".gitignore"]
 
 [dependencies]
 proc-macro2 = "1.0.86"
